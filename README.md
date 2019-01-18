@@ -1,12 +1,12 @@
 ## 简介
-这是一个简单的 http 服务器    
-运行于 windows 环境下    
-使用 C 语言写成    
+- 这是一个简单的 http 服务器
+- 运行于 windows 环境下
+- 使用 C 语言写成
 ## 编译
-1.请确保你的电脑已安装好 MinGW ，并且已经把 MinGW 加入了环境变量    
-2.运行 build.bat 的批处理文件    
+1. 请确保你的电脑已安装好 MinGW ，并且已经把 MinGW 加入了环境变量
+2. 运行 build.bat 的批处理文件
 ## 如何使用
-编译完成后，双击生成的exe文件即可    
+编译完成后，双击生成的exe文件即可
 程序会占用2047端口，程序所在的目录会作为网站的根目录
 ## cgi 脚本
 这个程序支持以下五种后缀名的 cgi 脚本，其中cgi后缀的是可执行文件
@@ -21,7 +21,7 @@
 ```
 #!python
 ```
-cgi 脚本输出的第一行需要指定响应头中的Content-Type，例如这样
+cgi 脚本输出的第一行需要指定响应头中的 Content-Type，例如这样
 ```
 Content-Type: text/html; charset=utf-8
 ```
@@ -42,15 +42,15 @@ Content-Type: text/html; charset=utf-8
 ├─makefile
 ```
 ## 这个程序编写的大致思路
-1.tpc的套路，socket，bind，listen，accept    
-2.使用 select 模型    
-3.在接收到 http 请求后解释 http 请求    
-4.通过文件后缀判断是动态请求还是静态请求    
-5.通过 cgi 脚本的首行获取解释器的路径    
-6.难点在于解释 http 请求和执行 cgi 脚本是的输入输出重定向
+1. tpc的套路，socket，bind，listen，accept
+2. 使用 select 模型
+3. 在接收到 http 请求后解释 http 请求
+4. 通过文件后缀判断是动态请求还是静态请求
+5. 通过 cgi 脚本的首行获取解释器的路径
+6. 难点在于解释 http 请求和执行 cgi 脚本是的输入输出重定向
 ## TODO
-1.解码 url 编码    
-2.确保，http 进程退出之后，cgi 进程也跟着退出    
-3.使用子进程    
-4.cgi 请求使用 chunked    
-5.使用配置文件加载配置
+1. 解码 url 编码
+2. 确保，http 进程退出之后，cgi 进程也跟着退出
+3. 使用子进程
+4. cgi 请求使用 chunked
+5. 使用配置文件加载配置
