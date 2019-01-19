@@ -54,3 +54,4 @@ Content-Type: text/html; charset=utf-8
 3. 使用子进程
 4. cgi 请求使用 chunked
 5. 使用配置文件加载配置
+6. 响应除 html 之外的文件类型
